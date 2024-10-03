@@ -14,6 +14,9 @@ class StaticControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     assert_match user.email_address, response.body
+    Current.set(session: user.sessions.last) do
+      assert_match Current.user.email_address, response.body
+    end
   end
 
   test "should not get dashboard when unauthenticated" do 
