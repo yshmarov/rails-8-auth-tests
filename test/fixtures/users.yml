@@ -1,0 +1,7 @@
+one:
+  email_address: yaro@superails.com
+  password_digest: <%= BCrypt::Password.create('password') %>
+
+two:
+  email_address: yuli@askvote.io
+  password_digest: <%= BCrypt::Password.create('password') %>
